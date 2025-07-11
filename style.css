@@ -1,0 +1,117 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* BACKGROUND SY CENTER */
+body {
+  background: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* CONTAINER CALCULATOR */
+.calculator {
+  background: #e0e0e0;
+  padding: 2rem;
+  border-radius: 30px;
+  box-shadow: 20px 20px 60px #bebebe,
+              -20px -20px 60px #ffffff;
+}
+
+/* DISPLAY */
+.display {
+  margin-bottom: 20px;
+}
+
+.display input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  border: none;
+  border-radius: 20px;
+  background: #e0e0e0;
+  color: #333;
+  box-shadow: inset 5px 5px 10px #bebebe,
+              inset -5px -5px 10px #ffffff;
+  text-align: right;
+}
+
+/* BUTTONS LAYOUT */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  gap: 15px;
+}
+
+/* COMMON BUTTON STYLE */
+.btn {
+  width: 80px;
+  height: 80px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 20px;
+  background: #e0e0e0;
+  color: #333;
+  box-shadow: 5px 5px 10px #bebebe,
+              -5px -5px 10px #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.95);
+  box-shadow: inset 5px 5px 10px #bebebe,
+              inset -5px -5px 10px #ffffff;
+}
+
+/* SCIENTIFIC BUTTONS OPTIONAL STYLING */
+.btn[data-value="π"],
+.btn[data-value="sqrt"],
+.btn[data-value="^2"],
+.btn[data-value="1/x"] {
+  background: #d6d6d6;
+  color: #222;
+}
+
+/* GLOW ANIMATION ON RESULT */
+.display input.result-glow {
+  animation: glow 0.3s ease-out;
+}
+
+@keyframes glow {
+  0% { background-color: #e0e0e0; }
+  50% { background-color: #c2f0c2; }
+  100% { background-color: #e0e0e0; }
+}
+
+/* RESPONSIVE FOR MOBILE */
+@media (max-width: 500px) {
+  .calculator {
+    padding: 1rem;
+    border-radius: 20px;
+  }
+
+  .buttons {
+    grid-template-columns: repeat(4, 60px);
+    gap: 10px;
+  }
+
+  .btn {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+    border-radius: 15px;
+  }
+
+  .display input {
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    border-radius: 15px;
+  }
+}
